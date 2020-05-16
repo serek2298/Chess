@@ -1,0 +1,3 @@
+C:/Users/serek/OneDrive/Pulpit/Programming/c++/ChessTest/cmake-build-debug/CMakeFiles/ChessTest.dir
+C:/Users/serek/OneDrive/Pulpit/Programming/c++/ChessTest/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/serek/OneDrive/Pulpit/Programming/c++/ChessTest/cmake-build-debug/CMakeFiles/rebuild_cache.dir

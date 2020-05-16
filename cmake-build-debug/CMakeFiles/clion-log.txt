@@ -1,0 +1,5 @@
+"C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest
+-- Found SFML .. in C:/Users/serek/OneDrive/Pulpit/Programming/Libs/SFML/include
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/serek/OneDrive/Pulpit/Programming/c++/ChessTest/cmake-build-debug
