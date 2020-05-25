@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\1Wojtek\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "D:\1Wojtek\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest
+CMAKE_SOURCE_DIR = D:\.Wojtek\ChessAI
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug
+CMAKE_BINARY_DIR = D:\.Wojtek\ChessAI\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ChessTest.dir/depend.make
@@ -59,44 +59,44 @@ include CMakeFiles/ChessTest.dir/flags.make
 CMakeFiles/ChessTest.dir/main.cpp.obj: CMakeFiles/ChessTest.dir/flags.make
 CMakeFiles/ChessTest.dir/main.cpp.obj: CMakeFiles/ChessTest.dir/includes_CXX.rsp
 CMakeFiles/ChessTest.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ChessTest.dir/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ChessTest.dir\main.cpp.obj -c C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\.Wojtek\ChessAI\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ChessTest.dir/main.cpp.obj"
+	D:\1Wojtek\MinGWSFML\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ChessTest.dir\main.cpp.obj -c D:\.Wojtek\ChessAI\main.cpp
 
 CMakeFiles/ChessTest.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ChessTest.dir/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\main.cpp > CMakeFiles\ChessTest.dir\main.cpp.i
+	D:\1Wojtek\MinGWSFML\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\.Wojtek\ChessAI\main.cpp > CMakeFiles\ChessTest.dir\main.cpp.i
 
 CMakeFiles/ChessTest.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ChessTest.dir/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\main.cpp -o CMakeFiles\ChessTest.dir\main.cpp.s
+	D:\1Wojtek\MinGWSFML\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\.Wojtek\ChessAI\main.cpp -o CMakeFiles\ChessTest.dir\main.cpp.s
 
 CMakeFiles/ChessTest.dir/Chess.cpp.obj: CMakeFiles/ChessTest.dir/flags.make
 CMakeFiles/ChessTest.dir/Chess.cpp.obj: CMakeFiles/ChessTest.dir/includes_CXX.rsp
 CMakeFiles/ChessTest.dir/Chess.cpp.obj: ../Chess.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ChessTest.dir/Chess.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ChessTest.dir\Chess.cpp.obj -c C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\Chess.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\.Wojtek\ChessAI\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ChessTest.dir/Chess.cpp.obj"
+	D:\1Wojtek\MinGWSFML\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ChessTest.dir\Chess.cpp.obj -c D:\.Wojtek\ChessAI\Chess.cpp
 
 CMakeFiles/ChessTest.dir/Chess.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ChessTest.dir/Chess.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\Chess.cpp > CMakeFiles\ChessTest.dir\Chess.cpp.i
+	D:\1Wojtek\MinGWSFML\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\.Wojtek\ChessAI\Chess.cpp > CMakeFiles\ChessTest.dir\Chess.cpp.i
 
 CMakeFiles/ChessTest.dir/Chess.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ChessTest.dir/Chess.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\Chess.cpp -o CMakeFiles\ChessTest.dir\Chess.cpp.s
+	D:\1Wojtek\MinGWSFML\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\.Wojtek\ChessAI\Chess.cpp -o CMakeFiles\ChessTest.dir\Chess.cpp.s
 
 CMakeFiles/ChessTest.dir/Figure.cpp.obj: CMakeFiles/ChessTest.dir/flags.make
 CMakeFiles/ChessTest.dir/Figure.cpp.obj: CMakeFiles/ChessTest.dir/includes_CXX.rsp
 CMakeFiles/ChessTest.dir/Figure.cpp.obj: ../Figure.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ChessTest.dir/Figure.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ChessTest.dir\Figure.cpp.obj -c C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\Figure.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\.Wojtek\ChessAI\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/ChessTest.dir/Figure.cpp.obj"
+	D:\1Wojtek\MinGWSFML\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\ChessTest.dir\Figure.cpp.obj -c D:\.Wojtek\ChessAI\Figure.cpp
 
 CMakeFiles/ChessTest.dir/Figure.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ChessTest.dir/Figure.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\Figure.cpp > CMakeFiles\ChessTest.dir\Figure.cpp.i
+	D:\1Wojtek\MinGWSFML\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\.Wojtek\ChessAI\Figure.cpp > CMakeFiles\ChessTest.dir\Figure.cpp.i
 
 CMakeFiles/ChessTest.dir/Figure.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ChessTest.dir/Figure.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\Figure.cpp -o CMakeFiles\ChessTest.dir\Figure.cpp.s
+	D:\1Wojtek\MinGWSFML\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\.Wojtek\ChessAI\Figure.cpp -o CMakeFiles\ChessTest.dir\Figure.cpp.s
 
 # Object files for target ChessTest
 ChessTest_OBJECTS = \
@@ -111,15 +111,15 @@ ChessTest.exe: CMakeFiles/ChessTest.dir/main.cpp.obj
 ChessTest.exe: CMakeFiles/ChessTest.dir/Chess.cpp.obj
 ChessTest.exe: CMakeFiles/ChessTest.dir/Figure.cpp.obj
 ChessTest.exe: CMakeFiles/ChessTest.dir/build.make
-ChessTest.exe: C:/Users/serek/OneDrive/Pulpit/Programming/Libs/SFML/lib/libsfml-system-d.a
-ChessTest.exe: C:/Users/serek/OneDrive/Pulpit/Programming/Libs/SFML/lib/libsfml-window-d.a
-ChessTest.exe: C:/Users/serek/OneDrive/Pulpit/Programming/Libs/SFML/lib/libsfml-graphics-d.a
-ChessTest.exe: C:/Users/serek/OneDrive/Pulpit/Programming/Libs/SFML/lib/libsfml-network-d.a
-ChessTest.exe: C:/Users/serek/OneDrive/Pulpit/Programming/Libs/SFML/lib/libsfml-audio-d.a
+ChessTest.exe: C:/Users/Mirek/Desktop/Wojciech/SFML/SFML-2.5.1/lib/libsfml-system-d.a
+ChessTest.exe: C:/Users/Mirek/Desktop/Wojciech/SFML/SFML-2.5.1/lib/libsfml-window-d.a
+ChessTest.exe: C:/Users/Mirek/Desktop/Wojciech/SFML/SFML-2.5.1/lib/libsfml-graphics-d.a
+ChessTest.exe: C:/Users/Mirek/Desktop/Wojciech/SFML/SFML-2.5.1/lib/libsfml-network-d.a
+ChessTest.exe: C:/Users/Mirek/Desktop/Wojciech/SFML/SFML-2.5.1/lib/libsfml-audio-d.a
 ChessTest.exe: CMakeFiles/ChessTest.dir/linklibs.rsp
 ChessTest.exe: CMakeFiles/ChessTest.dir/objects1.rsp
 ChessTest.exe: CMakeFiles/ChessTest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ChessTest.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\.Wojtek\ChessAI\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ChessTest.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\ChessTest.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -132,6 +132,6 @@ CMakeFiles/ChessTest.dir/clean:
 .PHONY : CMakeFiles/ChessTest.dir/clean
 
 CMakeFiles/ChessTest.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles\ChessTest.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\.Wojtek\ChessAI D:\.Wojtek\ChessAI D:\.Wojtek\ChessAI\cmake-build-debug D:\.Wojtek\ChessAI\cmake-build-debug D:\.Wojtek\ChessAI\cmake-build-debug\CMakeFiles\ChessTest.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ChessTest.dir/depend
 

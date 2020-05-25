@@ -34,30 +34,30 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\1Wojtek\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "D:\1Wojtek\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest
+CMAKE_SOURCE_DIR = D:\.Wojtek\SZachy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug
+CMAKE_BINARY_DIR = D:\.Wojtek\SZachy\cmake-build-debug
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/ChessTest.dir/all
+all: CMakeFiles/ChessAI.dir/all
 
 .PHONY : all
 
 # The main recursive "clean" target.
-clean: CMakeFiles/ChessTest.dir/clean
+clean: CMakeFiles/ChessAI.dir/clean
 
 .PHONY : clean
 
@@ -67,31 +67,31 @@ preinstall:
 .PHONY : preinstall
 
 #=============================================================================
-# Target rules for target CMakeFiles/ChessTest.dir
+# Target rules for target CMakeFiles/ChessAI.dir
 
 # All Build rule for target.
-CMakeFiles/ChessTest.dir/all:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/depend
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4 "Built target ChessTest"
-.PHONY : CMakeFiles/ChessTest.dir/all
+CMakeFiles/ChessAI.dir/all:
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/depend
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\.Wojtek\SZachy\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5 "Built target ChessAI"
+.PHONY : CMakeFiles/ChessAI.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/ChessTest.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles 4
-	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/ChessTest.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles 0
-.PHONY : CMakeFiles/ChessTest.dir/rule
+CMakeFiles/ChessAI.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\.Wojtek\SZachy\cmake-build-debug\CMakeFiles 5
+	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/ChessAI.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\.Wojtek\SZachy\cmake-build-debug\CMakeFiles 0
+.PHONY : CMakeFiles/ChessAI.dir/rule
 
 # Convenience name for target.
-ChessTest: CMakeFiles/ChessTest.dir/rule
+ChessAI: CMakeFiles/ChessAI.dir/rule
 
-.PHONY : ChessTest
+.PHONY : ChessAI
 
 # clean rule for target.
-CMakeFiles/ChessTest.dir/clean:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/clean
-.PHONY : CMakeFiles/ChessTest.dir/clean
+CMakeFiles/ChessAI.dir/clean:
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/clean
+.PHONY : CMakeFiles/ChessAI.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

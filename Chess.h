@@ -1,50 +1,32 @@
 //
-// Created by serek on 15.05.2020.
+// Created by Mirek on 19.05.2020.
 //
 
-#ifndef CHESSTEST_CHESS_H
-#define CHESSTEST_CHESS_H
-#include <utility>
-#include <string>
-#include <iostream>
-#include <SFML/Graphics.hpp>
-#include <SFML/Window.hpp>
-#include <SFML/System.hpp>
-
-#define LENGHT 7
-#define BLACK_PAWN 1
-#define BLACK_ROOK 2
-#define BLACK_KNIGHT 3
-#define BLACK_BITSHOP 4
-#define BLACK_QUEEN 5
-#define BLACK_KING 6
-#define WHITE_PAWN 1
-#define WHITE_ROOK 2
-#define WHITE_KNIGHT 3
-#define WHITE_BITSHOP 4
-#define WHITE_QUEEN 5
-#define WHITE_KING 6
-
+#ifndef CHESSAI_CHESS_H
+#define CHESSAI_CHESS_H
 #include "Figure.h"
+#include "Ai.h"
 
-class Chess  {
-    std::pair<int,int> position;
-    int board[8][8] = {
-            2, 3, 4, 5, 6, 4, 3, 2, 
-            1, 1, 1, 1, 1, 1, 1, 1, 
-            0, 0, 0, 0, 0, 0, 0, 0, 
-            0, 0, 0, 0, 0, 0, 0, 0, 
-            0, 0, 0, 0, 0, 0, 0, 0, 
-            0, 0, 0, 0, 0, 0, 0, 0, 
-            -1,-1,-1,-1,-1,-1,-1,-1,
-            -2,-3,-4,-5,-6,-4,-3,-2,
-    };
-    int turn;
+class Chess {
+private:
+public:
+    Figure* Board[8][8]{};
 
+    int turn=1;//white
+    int state=1;//0-menu, 1-play, 2-settings, 3-quit;
+    int bot=1;
+    int botcolor=0;
+    int botlvl=4;
 
-
-
+    Chess();
+    ~Chess()= default;
+    void GameIsON();
+    void Settings(sf::RenderWindow& window);
+    void Menu(sf::RenderWindow& window);
+    void Play(sf::RenderWindow& window);
+    bool ifColide(int x1,int y1,int x2,int y2);
+    void  AIMove( int color);
 };
 
 
-#endif //CHESSTEST_CHESS_H
+#endif //CHESSAI_CHESS_H

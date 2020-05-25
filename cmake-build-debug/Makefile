@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "D:\1Wojtek\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "D:\1Wojtek\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest
+CMAKE_SOURCE_DIR = D:\.Wojtek\SZachy
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug
+CMAKE_BINARY_DIR = D:\.Wojtek\SZachy\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmak
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"D:\1Wojtek\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"D:\1Wojtek\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\.Wojtek\SZachy\cmake-build-debug\CMakeFiles D:\.Wojtek\SZachy\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\serek\OneDrive\Pulpit\Programming\c++\ChessTest\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\.Wojtek\SZachy\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -110,17 +110,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named ChessTest
+# Target rules for targets named ChessAI
 
 # Build rule for target.
-ChessTest: cmake_check_build_system
-	$(MAKE) -f CMakeFiles\Makefile2 ChessTest
-.PHONY : ChessTest
+ChessAI: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 ChessAI
+.PHONY : ChessAI
 
 # fast build rule for target.
-ChessTest/fast:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/build
-.PHONY : ChessTest/fast
+ChessAI/fast:
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/build
+.PHONY : ChessAI/fast
+
+Ai.obj: Ai.cpp.obj
+
+.PHONY : Ai.obj
+
+# target to build an object file
+Ai.cpp.obj:
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/Ai.cpp.obj
+.PHONY : Ai.cpp.obj
+
+Ai.i: Ai.cpp.i
+
+.PHONY : Ai.i
+
+# target to preprocess a source file
+Ai.cpp.i:
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/Ai.cpp.i
+.PHONY : Ai.cpp.i
+
+Ai.s: Ai.cpp.s
+
+.PHONY : Ai.s
+
+# target to generate assembly for a file
+Ai.cpp.s:
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/Ai.cpp.s
+.PHONY : Ai.cpp.s
 
 Chess.obj: Chess.cpp.obj
 
@@ -128,7 +155,7 @@ Chess.obj: Chess.cpp.obj
 
 # target to build an object file
 Chess.cpp.obj:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/Chess.cpp.obj
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/Chess.cpp.obj
 .PHONY : Chess.cpp.obj
 
 Chess.i: Chess.cpp.i
@@ -137,7 +164,7 @@ Chess.i: Chess.cpp.i
 
 # target to preprocess a source file
 Chess.cpp.i:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/Chess.cpp.i
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/Chess.cpp.i
 .PHONY : Chess.cpp.i
 
 Chess.s: Chess.cpp.s
@@ -146,7 +173,7 @@ Chess.s: Chess.cpp.s
 
 # target to generate assembly for a file
 Chess.cpp.s:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/Chess.cpp.s
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/Chess.cpp.s
 .PHONY : Chess.cpp.s
 
 Figure.obj: Figure.cpp.obj
@@ -155,7 +182,7 @@ Figure.obj: Figure.cpp.obj
 
 # target to build an object file
 Figure.cpp.obj:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/Figure.cpp.obj
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/Figure.cpp.obj
 .PHONY : Figure.cpp.obj
 
 Figure.i: Figure.cpp.i
@@ -164,7 +191,7 @@ Figure.i: Figure.cpp.i
 
 # target to preprocess a source file
 Figure.cpp.i:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/Figure.cpp.i
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/Figure.cpp.i
 .PHONY : Figure.cpp.i
 
 Figure.s: Figure.cpp.s
@@ -173,7 +200,7 @@ Figure.s: Figure.cpp.s
 
 # target to generate assembly for a file
 Figure.cpp.s:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/Figure.cpp.s
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/Figure.cpp.s
 .PHONY : Figure.cpp.s
 
 main.obj: main.cpp.obj
@@ -182,7 +209,7 @@ main.obj: main.cpp.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/main.cpp.obj
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -191,7 +218,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/main.cpp.i
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -200,7 +227,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) -f CMakeFiles\ChessTest.dir\build.make CMakeFiles/ChessTest.dir/main.cpp.s
+	$(MAKE) -f CMakeFiles\ChessAI.dir\build.make CMakeFiles/ChessAI.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -209,9 +236,12 @@ help:
 	@echo ... all (the default if no target is provided)
 	@echo ... clean
 	@echo ... depend
-	@echo ... ChessTest
+	@echo ... ChessAI
 	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... Ai.obj
+	@echo ... Ai.i
+	@echo ... Ai.s
 	@echo ... Chess.obj
 	@echo ... Chess.i
 	@echo ... Chess.s
