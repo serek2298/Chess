@@ -4,7 +4,79 @@
 
 #include "Ai.h"
 
-unsigned long long combo = 1;
+//Evaluation arrays
+float pawnEval[8][8] = {
+        {0.0, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0},
+        {5.0, 5.0,  5.0,  5.0,  5.0,  5.0,  5.0,  5.0},
+        {1.0, 1.0,  2.0,  3.0,  3.0,  2.0,  1.0,  1.0},
+        {0.5, 0.5,  1.0,  2.5,  2.5,  1.0,  0.5,  0.5},
+        {0.0, 0.0,  0.0,  2.0,  2.0,  0.0,  0.0,  0.0},
+        {0.5, -0.5, -1.0, 0.0,  0.0,  -1.0, -0.5, 0.5},
+        {0.5, 1.0,  1.0,  -2.0, -2.0, 1.0,  1.0,  0.5},
+        {0.0, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  0.0}
+};
+
+
+float knightEval[8][8] =
+        {
+                {-5.0, -4.0, -3.0, -3.0, -3.0, -3.0, -4.0, -5.0},
+                {-4.0, -2.0, 0.0,  0.0,  0.0,  0.0,  -2.0, -4.0},
+                {-3.0, 0.0,  1.0,  1.5,  1.5,  1.0,  0.0,  -3.0},
+                {-3.0, 0.5,  1.5,  2.0,  2.0,  1.5,  0.5,  -3.0},
+                {-3.0, 0.0,  1.5,  2.0,  2.0,  1.5,  0.0,  -3.0},
+                {-3.0, 0.5,  1.0,  1.5,  1.5,  1.0,  0.5,  -3.0},
+                {-4.0, -2.0, 0.0,  0.5,  0.5,  0.0,  -2.0, -4.0},
+                {-5.0, -4.0, -3.0, -3.0, -3.0, -3.0, -4.0, -5.0}
+        };
+
+float bishopEval[8][8] = {
+        {-2.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -2.0},
+        {-1.0, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  -1.0},
+        {-1.0, 0.0,  0.5,  1.0,  1.0,  0.5,  0.0,  -1.0},
+        {-1.0, 0.5,  0.5,  1.0,  1.0,  0.5,  0.5,  -1.0},
+        {-1.0, 0.0,  1.0,  1.0,  1.0,  1.0,  0.0,  -1.0},
+        {-1.0, 1.0,  1.0,  1.0,  1.0,  1.0,  1.0,  -1.0},
+        {-1.0, 0.5,  0.0,  0.0,  0.0,  0.0,  0.5,  -1.0},
+        {-2.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -2.0}
+};
+
+
+float rookEval[8][8] = {
+        {0.0,  0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0},
+        {0.5,  1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.5},
+        {-0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5},
+        {-0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5},
+        {-0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5},
+        {-0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5},
+        {-0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, -0.5},
+        {0.0,  0.0, 0.0, 0.5, 0.5, 0.0, 0.0, 0.0}
+};
+
+
+float queenEval[8][8] =
+        {
+                {-2.0, -1.0, -1.0, -0.5, -0.5, -1.0, -1.0, -2.0},
+                {-1.0, 0.0,  0.0,  0.0,  0.0,  0.0,  0.0,  -1.0},
+                {-1.0, 0.0,  0.5,  0.5,  0.5,  0.5,  0.0,  -1.0},
+                {-0.5, 0.0,  0.5,  0.5,  0.5,  0.5,  0.0,  -0.5},
+                {0.0,  0.0,  0.5,  0.5,  0.5,  0.5,  0.0,  -0.5},
+                {-1.0, 0.5,  0.5,  0.5,  0.5,  0.5,  0.0,  -1.0},
+                {-1.0, 0.0,  0.5,  0.0,  0.0,  0.0,  0.0,  -1.0},
+                {-2.0, -1.0, -1.0, -0.5, -0.5, -1.0, -1.0, -2.0}
+        };
+
+float kingEval[8][8] = {
+
+        {-3.0, -4.0, -4.0, -5.0, -5.0, -4.0, -4.0, -3.0},
+        {-3.0, -4.0, -4.0, -5.0, -5.0, -4.0, -4.0, -3.0},
+        {-3.0, -4.0, -4.0, -5.0, -5.0, -4.0, -4.0, -3.0},
+        {-3.0, -4.0, -4.0, -5.0, -5.0, -4.0, -4.0, -3.0},
+        {-2.0, -3.0, -3.0, -4.0, -4.0, -3.0, -3.0, -2.0},
+        {-1.0, -2.0, -2.0, -2.0, -2.0, -2.0, -2.0, -1.0},
+        {2.0,  2.0,  0.0,  0.0,  0.0,  0.0,  2.0,  2.0},
+        {2.0,  3.0,  1.0,  0.0,  0.0,  1.0,  3.0,  2.0}
+};
+
 
 void BruteForce::loadBoard(Figure *B[8][8]) {
     //Injecting state of Board to AI
@@ -28,81 +100,56 @@ std::pair<Poz, Poz> BruteForce::MinMaxAlgorithm(int depth, int color) {
     return getMove(this->Board, depth, color, 1).second;
 }
 
-std::pair<int, std::pair<Poz, Poz>>
-BruteForce::getMove(int fakeBoard[8][8], int depth, int color, int minmax/* 0-MIN 1-MAX*/) {
+std::pair<float, std::pair<Poz, Poz>>BruteForce::getMove(int fakeBoard[8][8], int depth, int color, int minmax/* 0-MIN 1-MAX*/) {
     if (depth <= 0)return {}; // if depth limit reached
-    std::pair<int, std::pair<Poz, Poz>> BestMove;
-    int min = 0, max = 0;
+    std::pair<float, std::pair<Poz, Poz>> BestMove;
     auto moves = this->searchMove(fakeBoard, color);
-    if (minmax == 1) {
+    if (minmax == 1) {//MAXIMUM
         BestMove.first = -1000000;
-        for (auto &move:moves) {
-            if (true) {
-                //std::cout<<move.first<<"\t"<<move.second.first.x<<"|"<<move.second.first.y<<"==>"<<move.second.second.x<<"|"<<move.second.second.y<<"\n";
-                int fakeBoard2[8][8];
-                for (int i = 0; i < 8; i++) {
-                    for (int j = 0; j < 8; j++) {
-                        fakeBoard2[i][j] = fakeBoard[i][j];
-                    }
+        for (auto move = moves.begin(); move != moves.end(); move++) {
+            int fakeBoard2[8][8];
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    fakeBoard2[i][j] = fakeBoard[i][j];
                 }
-                fakeBoard2[move.second.second.x][move.second.second.y] = fakeBoard2[move.second.first.x][move.second.first.y];
-                fakeBoard2[move.second.first.x][move.second.first.y] = 0;
-                max++;
-                auto MinMax = getMove(fakeBoard2, depth - 1, (color + 1) % 2, (minmax + 1) % 2);
-                std::pair<int, std::pair<Poz, Poz>> NewMove = std::make_pair(MinMax.first + move.first, move.second);
-
-                if ((BestMove.first < NewMove.first)) {//BestMove update
-//                    std::cout<<"=========================================================================\n";
-//                    std::cout<<"Best move value"<<BestMove.first<<"\n";
-//                    std::cout<<"Movevalue "<<NewMove.first<<"MinMax valyue: "<<MinMax.first<<"\t"<<NewMove.second.first.x<<"|"<<NewMove.second.first.y<<" ==> "<<NewMove.second.second.x<<"|"<<NewMove.second.second.y<<"\n";
-//                    std::cout<<"=========================================================================\n";
-                    BestMove = move;
-                }
+            }
+            fakeBoard2[move->second.second.x][move->second.second.y] = fakeBoard2[move->second.first.x][move->second.first.y];
+            fakeBoard2[move->second.first.x][move->second.first.y] = 0;
+            auto MinMax = getMove(fakeBoard2, depth - 1, (color + 1) % 2, (minmax + 1) % 2);
+            std::pair<int, std::pair<Poz, Poz>> NewMove = std::make_pair(MinMax.first + move->first+Evaluate(fakeBoard2[move->second.first.x][move->second.first.y],move->second.second.x,move->second.second.y), move->second);
+            if ((BestMove.first < NewMove.first)) {//BestMove update
+                BestMove = NewMove;
             }
         }
 
-    } else if (minmax == 0) {
+    } else if (minmax == 0) {//MINIMUM
         BestMove.first = 1000000;
 
-        for (auto it = moves.rbegin(); it != moves.rend(); it++) {
-            if (true) {
-                int fakeBoard2[8][8];
-                for (int i = 0; i < 8; i++) {
-                    for (int j = 0; j < 8; j++) {
-                        fakeBoard2[i][j] = fakeBoard[i][j];
-                    }
+        for (auto it = moves.rbegin(); it != moves.rend(); it++) {//Searching tree only for best results (half)
+            int fakeBoard2[8][8];
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 8; j++) {
+                    fakeBoard2[i][j] = fakeBoard[i][j];
                 }
-                fakeBoard2[it->second.second.x][it->second.second.y] = fakeBoard2[it->second.first.x][it->second.first.y];
-                fakeBoard2[it->second.first.x][it->second.first.y] = 0;
-                min++;
-                auto MinMax = getMove(fakeBoard2, depth - 1, (color + 1) % 2, (minmax + 1) % 2);
-                std::pair<int, std::pair<Poz, Poz>> NewMove = std::make_pair(MinMax.first + it->first, it->second);
-                if (BestMove.first > NewMove.first) {//BestMove update
-//                    std::cout<<"=========================================================================\n";
-//                    std::cout<<"Best move value"<<BestMove.first<<"\n";
-//                    std::cout<<"Move value "<<NewMove.first<<"MinMax value: "<<MinMax.first<<"\t"<<NewMove.second.first.x<<"|"<<NewMove.second.first.y<<" ==> "<<NewMove.second.second.x<<"|"<<NewMove.second.second.y<<"\n";
-//                    std::cout<<"=========================================================================\n";
-                    BestMove = *it;
+            }
+            fakeBoard2[it->second.second.x][it->second.second.y] = fakeBoard2[it->second.first.x][it->second.first.y];
+            fakeBoard2[it->second.first.x][it->second.first.y] = 0;
+            auto MinMax = getMove(fakeBoard2, depth - 1, (color + 1) % 2, (minmax + 1) % 22);
+            std::pair<float , std::pair<Poz, Poz>> NewMove = std::make_pair(MinMax.first + it->first+Evaluate(fakeBoard2[it->second.first.x][it->second.first.y],it->second.second.x,it->second.second.y), it->second);
+            if (BestMove.first > NewMove.first) {//BestMove update
+                if (depth == 3) {
+                    BestMove = NewMove;
                 }
             }
         }
     }
-//    std::cout << "Moves for depth: " << depth << "| dla search tree";
-//    if (minmax == 1) {
-//        combo += max;
-//        std::cout << "max = " << max << "\n";
-//    } else {
-//        combo += min;
-//        std::cout << "min = " << min << "\n";
-//    }
-//    std::cout << "Final Combinations= " << combo << "\n";
     return BestMove;
 }
 
 
 std::multimap<int, std::pair<Poz, Poz>> BruteForce::searchMove(int fakeBoard[8][8], int color) {
     std::multimap<int, std::pair<Poz, Poz>> Moves;
-    int whiteking=0,blackking=0;
+    int whiteking = 0, blackking = 0;
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 8; j++) {
             int Figure = fakeBoard[i][j];
@@ -110,20 +157,32 @@ std::multimap<int, std::pair<Poz, Poz>> BruteForce::searchMove(int fakeBoard[8][
                 switch (abs(Figure)) {
                     case 10:
                         if (color == 0) {//Black Pawn
-                            if(j==1 && fakeBoard[i][j+1]== 0 && fakeBoard[i][j+2]==0)Moves.emplace(0, std::make_pair(Poz{i, j}, Poz{i, j + 2}));
+                            if (j == 1 && fakeBoard[i][j + 1] == 0 && fakeBoard[i][j + 2] == 0)
+                                Moves.emplace(0,
+                                              std::make_pair(Poz{i,j},Poz{i,j +2}));
                             if (fakeBoard[i][j + 1] == 0)Moves.emplace(0, std::make_pair(Poz{i, j}, Poz{i, j + 1}));
-                            if(isOnBoard(j+1,j+1))if (fakeBoard[i + 1][j + 1] > 0)
-                                Moves.emplace(fakeBoard[i + 1][j + 1], std::make_pair(Poz{i, j}, Poz{i + 1, j + 1}));
-                            if (isOnBoard(i-1,j+1))if(fakeBoard[i - 1][j + 1] > 0)
-                                Moves.emplace(fakeBoard[i - 1][j + 1], std::make_pair(Poz{i, j}, Poz{i - 1, j + 1}));
+                            if (isOnBoard(j + 1, j + 1))
+                                if (fakeBoard[i + 1][j + 1] > 0)
+                                    Moves.emplace(fakeBoard[i + 1][j + 1],
+                                                  std::make_pair(Poz{i, j}, Poz{i + 1, j + 1}));
+                            if (isOnBoard(i - 1, j + 1))
+                                if (fakeBoard[i - 1][j + 1] > 0)
+                                    Moves.emplace(fakeBoard[i - 1][j + 1],
+                                                  std::make_pair(Poz{i, j}, Poz{i - 1, j + 1}));
 
                         } else if (color == 1) {//White Pawn
-                            if(j==6 && fakeBoard[i][j-1]== 0 && fakeBoard[i][j-2]==0)Moves.emplace(0, std::make_pair(Poz{i, j}, Poz{i, j - 2}));
-                            if (fakeBoard[i][j - 1] == 0)Moves.emplace(0, std::make_pair(Poz{i, j}, Poz{i, j - 1}));
-                            if(isOnBoard(i+1,j-1))if (fakeBoard[i + 1][j - 1] < 0)
-                                Moves.emplace(fakeBoard[i + 1][j - 1], std::make_pair(Poz{i, j}, Poz{i + 1, j - 1}));
-                            if (isOnBoard(i-1,j-1))if(fakeBoard[i - 1][j - 1] < 0)
-                                Moves.emplace(fakeBoard[i - 1][j - 1], std::make_pair(Poz{i, j}, Poz{i - 1, j - 1}));
+                            if (j == 6 && fakeBoard[i][j - 1] == 0 && fakeBoard[i][j - 2] == 0)
+                                Moves.emplace(0,std::make_pair(Poz{i,j},Poz{i,j -2}));
+                            if (fakeBoard[i][j - 1] == 0)
+                                Moves.emplace(0, std::make_pair(Poz{i, j}, Poz{i, j - 1}));
+                            if (isOnBoard(i + 1, j - 1))
+                                if (fakeBoard[i + 1][j - 1] < 0)
+                                    Moves.emplace(fakeBoard[i + 1][j - 1],
+                                                  std::make_pair(Poz{i, j}, Poz{i + 1, j - 1}));
+                            if (isOnBoard(i - 1, j - 1))
+                                if (fakeBoard[i - 1][j - 1] < 0)
+                                    Moves.emplace(fakeBoard[i - 1][j - 1],
+                                                  std::make_pair(Poz{i, j}, Poz{i - 1, j - 1}));
                         }
                         break;
 
@@ -276,8 +335,8 @@ std::multimap<int, std::pair<Poz, Poz>> BruteForce::searchMove(int fakeBoard[8][
                     }
                         break;
                     case 900: {
-                        if(color == 1)whiteking++;
-                        if(color == 0)blackking++;
+                        if (color == 1)whiteking++;
+                        if (color == 0)blackking++;
                         for (int a = -1; a < 2; a++) {
                             if (isOnBoard(i + a, j - 1) && ((fakeBoard[i + a][j - 1] >= 0 && color == 0) ||
                                                             (fakeBoard[i + a][j - 1] <= 0 && color == 1)))
@@ -298,11 +357,44 @@ std::multimap<int, std::pair<Poz, Poz>> BruteForce::searchMove(int fakeBoard[8][
             }
         }
     }
-    if((whiteking==0 && color ==1)|| (blackking==0 && color ==0))return {};
+    if ((whiteking == 0 && color == 1) || (blackking == 0 && color == 0))return {};
     return Moves;
 }
 
-int BruteForce::evaluate(int a, int b, int x, int y) {
-    return 0;
+float BruteForce::Evaluate(int Figure,int x,int y) {
+    switch(Figure){
+        case 10:
+            return pawnEval[x][y];
+            break;
+        case -10:
+            return pawnEval[x][7-y];
+            break;
+        case 30:
+            return knightEval[x][y];
+            break;
+        case -30:
+            return knightEval[x][7-y];
+            break;
+        case 35:
+            return bishopEval[x][y];
+        case -35:
+            return bishopEval[x][7-y];
+        case 50:
+            return rookEval[x][y];
+        case -50:
+                return rookEval[x][7-y];
+        case 90:
+            return queenEval[x][y];
+        case -90:
+            return queenEval[x][7-y];
+        case 900:
+            return kingEval[x][y];
+        case -900:
+            return kingEval[x][7-y];
+        default:
+            return 0;
+            break;
+    }
 }
+
 

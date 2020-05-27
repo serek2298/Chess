@@ -1,3 +1,0 @@
-"D:\1Wojtek\CLion 2019.3.4\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\ChessTest.dir/objects.a
-D:\1Wojtek\MinGWSFML\bin\ar.exe cr CMakeFiles\ChessTest.dir/objects.a @CMakeFiles\ChessTest.dir\objects1.rsp
-D:\1Wojtek\MinGWSFML\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\ChessTest.dir/objects.a -Wl,--no-whole-archive  -o ChessTest.exe -Wl,--out-implib,libChessTest.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\ChessTest.dir\linklibs.rsp

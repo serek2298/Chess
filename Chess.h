@@ -21,9 +21,6 @@ public:
     Chess();
     ~Chess()= default;
     void GameIsON();
-    void Settings(sf::RenderWindow& window);
-    void Menu(sf::RenderWindow& window);
-    void Play(sf::RenderWindow& window);
     bool ifColide(int x1,int y1,int x2,int y2);
     void  AIMove( int color);
 };

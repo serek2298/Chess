@@ -1,4 +1,4 @@
-ToolSet: w64 6.0 (local)@D:\1Wojtek\MinGWSFML
+ToolSet: w64 6.0 (local)@C:\Users\serek\OneDrive\Pulpit\Programming\Libs\MinGW64
 Options: 
 
 Options:
